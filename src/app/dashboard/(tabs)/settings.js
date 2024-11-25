@@ -11,8 +11,9 @@ const Settings = () => {
 
   const options = [
     { title: 'Account', icon: 'person-outline' },
-    { title: 'Notifications', icon: 'notifications-outline' },
     { title: 'Privacy', icon: 'lock-closed-outline' },
+    { title: 'Help and Support', icon: 'help-circle-outline' }, // Added Help and Support
+    { title: 'Others', icon: 'ellipsis-horizontal-outline' }, // Added Others
   ];
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
@@ -34,7 +35,7 @@ const Settings = () => {
         {/* Static Options */}
         {options.map((option, index) => (
           <TouchableOpacity key={index} style={styles.listItem}>
-            <Ionicons name={option.icon} size={20} color="#89CFF0" />
+            <Ionicons name={option.icon} size={20} color="#0047AB" />
             <Text style={styles.listItemText}>{option.title}</Text>
             <Ionicons name="chevron-forward-outline" size={20} color="#ccc" />
           </TouchableOpacity>
@@ -45,7 +46,7 @@ const Settings = () => {
           style={[styles.listItem, isAppearanceExpanded && styles.expandedItem]}
           onPress={handleAppearanceToggle}
         >
-          <Ionicons name="eye-outline" size={20} color="#89CFF0" />
+          <Ionicons name="eye-outline" size={20} color="#0047AB" />
           <Text style={styles.listItemText}>Appearance</Text>
           <Ionicons
             name={
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent: 'center',
   },
   header: {
     flexDirection: 'row',
